@@ -1,0 +1,17 @@
+<launch>
+  <arg name="usb" default="/dev/ttyUSB0" />
+
+  <!-- <rosparam command="load" file="$(find robotiq_2f_85_description)/config/joint_names.yaml" /> -->
+
+  <node pkg="robotiq_2f_gripper_control" type="Robotiq2FGripperRtuNode.py" name="robotiq2FGripper" output="screen">
+      <param name="usb" value="$(arg usb)" />
+  </node>
+
+  <node pkg="robotiq_2f_gripper_control" type="Robotiq2FGripperJointController_copy.py" name="Robotiq2FGripperJointController" output="screen" />
+
+  <!-- <node pkg="industrial_robot_client" type="joint_trajectory_action" name="gripper_trajectory_action">
+    <remap from="/joint_path_command" to="/Robotiq/joint_path_command"/>  
+    <remap from="/gripper_trajectory_action" to="/gripper_2f_controller/joint_trajectory_action"/>
+  </node> -->
+
+</launch>
