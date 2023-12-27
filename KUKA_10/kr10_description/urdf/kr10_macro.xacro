@@ -17,6 +17,11 @@
           <mesh filename="package://kr10_description/meshes/kr10r1420/collision/base_link.stl" />
         </geometry>
       </collision>
+      <inertial>
+        <mass value="23.085357"/>
+        <origin rpy="0.0 0.0 0.0" xyz="0.007579 0.000017 0.180670"/>
+        <inertia ixx="0.343576" ixy="-0.000062" ixz="-0.002079" iyy="0.336217" iyz="-0.000014" izz="0.334050"/>
+      </inertial>
     </link>
     <link name="${prefix}link_1">
       <visual>
@@ -32,6 +37,11 @@
           <mesh filename="package://kr10_description/meshes/kr10r1420/collision/link_1.stl" />
         </geometry>
       </collision>
+      <inertial>
+        <mass value="45.357763"/>
+        <origin rpy="0.0 0.0 0.0" xyz="0.085479 -0.002547 -0.040488"/>
+        <inertia ixx="0.839141" ixy="0.022637" ixz="0.162457" iyy="1.030146" iyz="0.027416" izz="1.064698"/>
+      </inertial>
     </link>
     <link name="${prefix}link_2">
       <visual>
@@ -47,6 +57,11 @@
           <mesh filename="package://kr10_description/meshes/kr10r1420/collision/link_2.stl" />
         </geometry>
       </collision>
+      <inertial>
+        <mass value="51.266495"/>
+        <origin rpy="0.0 0.0 0.0" xyz="-0.000002 0.264164 0.347704"/>
+        <inertia ixx="5.272800" ixy="0.000010" ixz="0.000017" iyy="5.536809" iyz="-0.008261" izz="0.486191"/>
+      </inertial>
     </link>
     <link name="${prefix}link_3">
       <visual>
@@ -62,6 +77,11 @@
           <mesh filename="package://kr10_description/meshes/kr10r1420/collision/link_3.stl" />
         </geometry>
       </collision>
+      <inertial>
+        <mass value="19.754401"/>
+        <origin rpy="0.0 0.0 0.0" xyz="-0.000255 0.016478 -0.003819"/>
+        <inertia ixx="0.249388" ixy="-0.004901" ixz="0.004825" iyy="0.211780" iyz="0.000574" izz="0.238488"/>
+      </inertial>
     </link>
     <link name="${prefix}link_4">
       <visual>
@@ -77,6 +97,11 @@
           <mesh filename="package://kr10_description/meshes/kr10r1420/collision/link_4.stl" />
         </geometry>
       </collision>
+      <inertial>
+        <mass value="15.287896"/>
+        <origin rpy="0.0 0.0 0.0" xyz="-0.015515 0.000164 0.340348"/>
+        <inertia ixx="0.331593" ixy="0.000055" ixz="-0.010688" iyy="0.320895" iyz="0.000058" izz="0.086557"/>
+      </inertial>
     </link>
     <link name="${prefix}link_5">
       <visual>
@@ -92,6 +117,11 @@
           <mesh filename="package://kr10_description/meshes/kr10r1420/collision/link_5.stl" />
         </geometry>
       </collision>
+      <inertial>
+        <mass value="0.548088"/>
+        <origin rpy="0.0 0.0 0.0" xyz="0.000000 -0.000347 0.023671"/>
+        <inertia ixx="0.000876" ixy="0.000000" ixz="0.000000" iyy="0.000889" iyz="0.000005" izz="0.000412"/>
+      </inertial>
     </link>
     <link name="${prefix}link_6">
       <visual>
@@ -107,6 +137,11 @@
           <mesh filename="package://kr10_description/meshes/kr10r1420/collision/link_6.stl" />
         </geometry>
       </collision>
+      <inertial>
+        <mass value="0.038484"/>
+        <origin rpy="0.0 0.0 0.0" xyz="-0.000245 0.000000 -0.007626"/>
+        <inertia ixx="0.000011" ixy="0.000000" ixz="0.000000" iyy="0.000011" iyz="0.000000" izz="0.000021"/>
+      </inertial>
     </link>
     <!-- Following REP199, this frame shall be use to attach EEF or other equipment -->
     <link name="${prefix}flange" />
@@ -116,42 +151,48 @@
       <parent link="${prefix}base_link"/>
       <child link="${prefix}link_1"/>
       <axis xyz="0 0 -1"/>
-      <limit effort="0" lower="${radians(-170)}" upper="${radians(170)}" velocity="${radians(220)}"/>
+      <limit effort="692" lower="${radians(-170)}" upper="${radians(170)}" velocity="${radians(220)}"/>
+      <dynamics damping="0.0" friction="0.0"/>
     </joint>
     <joint name="${prefix}joint_a2" type="revolute">
       <origin xyz="0.150 0 0" rpy="0 0 0"/>
       <parent link="${prefix}link_1"/>
       <child link="${prefix}link_2"/>
       <axis xyz="0 1 0"/>
-      <limit effort="0" lower="${radians(-185)}" upper="${radians(65)}" velocity="${radians(210)}"/>
+      <limit effort="574" lower="${radians(-185)}" upper="${radians(65)}" velocity="${radians(210)}"/>
+      <dynamics damping="0.0" friction="0.0"/>
     </joint>
     <joint name="${prefix}joint_a3" type="revolute">
       <origin xyz="0.610 0 0" rpy="0 0 0"/>
       <parent link="${prefix}link_2"/>
       <child link="${prefix}link_3"/>
       <axis xyz="0 1 0"/>
-      <limit effort="0" lower="${radians(-137)}" upper="${radians(163)}" velocity="${radians(270)}"/>
+      <limit effort="242" lower="${radians(-137)}" upper="${radians(163)}" velocity="${radians(270)}"/>
+      <dynamics damping="0.0" friction="0.0"/>
     </joint>
     <joint name="${prefix}joint_a4" type="revolute">
       <origin xyz="0 0 0.02" rpy="0 0 0"/>
       <parent link="${prefix}link_3"/>
       <child link="${prefix}link_4"/>
       <axis xyz="-1 0 0"/>
-      <limit effort="0" lower="${radians(-185)}" upper="${radians(185)}" velocity="${radians(381)}"/>
+      <limit effort="58" lower="${radians(-185)}" upper="${radians(185)}" velocity="${radians(381)}"/>
+      <dynamics damping="0.0" friction="0.0"/>
     </joint>
     <joint name="${prefix}joint_a5" type="revolute">
       <origin xyz="0.660 0 0" rpy="0 0 0"/>
       <parent link="${prefix}link_4"/>
       <child link="${prefix}link_5"/>
       <axis xyz="0 1 0"/>
-      <limit effort="0" lower="${radians(-120)}" upper="${radians(120)}" velocity="${radians(311)}"/>
+      <limit effort="29" lower="${radians(-120)}" upper="${radians(120)}" velocity="${radians(311)}"/>
+      <dynamics damping="0.0" friction="0.0"/>
     </joint>
     <joint name="${prefix}joint_a6" type="revolute">
       <origin xyz="0.080 0 0" rpy="0 0 0"/>
       <parent link="${prefix}link_5"/>
       <child link="${prefix}link_6"/>
       <axis xyz="-1 0 0"/>
-      <limit effort="0" lower="${radians(-350)}" upper="${radians(350)}" velocity="${radians(492)}"/>
+      <limit effort="29" lower="${radians(-350)}" upper="${radians(350)}" velocity="${radians(492)}"/>
+      <dynamics damping="0.0" friction="0.0"/>
     </joint>
     <joint name="${prefix}joint_a6-flange" type="fixed">
       <parent link="${prefix}link_6"/>
