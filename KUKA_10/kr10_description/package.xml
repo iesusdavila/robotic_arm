@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>kr10_description</name>
+  <version>0.0.0</version>
+  <description>The kr10_description package</description>
+
+  <maintainer email="robots-irda@todo.todo">robots-irda</maintainer>
+
+  <license>TODO</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>rospy</build_depend>
+  <build_depend>std_msgs</build_depend>
+  <build_export_depend>rospy</build_export_depend>
+  <build_export_depend>std_msgs</build_export_depend>
+  <exec_depend>rospy</exec_depend>
+  <exec_depend>std_msgs</exec_depend>
+
+  <test_depend>roslaunch</test_depend>
+
+  <exec_depend>industrial_robot_client</exec_depend>
+  <exec_depend>joint_state_publisher</exec_depend>
+  <exec_depend>kuka_resources</exec_depend>
+  <exec_depend>robot_state_publisher</exec_depend>
+  <exec_depend>rviz</exec_depend>
+  <exec_depend>xacro</exec_depend>
+
+  <export>
+    <architecture_independent/>
+  </export>
+</package>
